@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.weather-app {
+    background-color: rgb(158, 186, 235);
+    width: 95%; /* Increased adaptability */
+    max-width: 500px; /* Slightly reduced max-width for tighter layouts */
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Enables better handling on narrow screens */
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 15px;
+    font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 9) 0px 3px 8px;
+}
+
+.search-btn {
+    background-color: #3498db;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 9) 0px 3px 8px;
+}
+
+.search-btn:hover {
+    background-color: #2980b9;
+}
+
+.city-date-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.city-date-section .city {
+    font-size: 1.8rem;
+    opacity: 0.9;
+    word-wrap: break-word; /* Ensures text doesn't overflow */
+}
+
+.city-date-section .date {
+    background-color: #c3eaf4;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    box-shadow: rgba(0, 0, 0, 9) 0px 3px 8px;
+}
+
+.temperature-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.temperature-info .temp {
+    font-size: 5rem;
+}
+
+.temperature-info .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.temperature-info .description i {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.temperature-info .description span {
+    font-size: 1.5rem;
+}
+
+.additional-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.wind-info, .humidity-info, .visibility-info {
+    background-color: #ecf0f1;
+    flex: 1 1 calc(30% - 20px);
+    max-width: 140px; /* Slightly smaller for tighter layouts */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 9) 0px 3px 8px;
+}
+
+.wind-info div, .humidity-info div, .visibility-info div {
+    text-align: center;
+}
+
+.additional-info .material-icons {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.recommendation-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 9) 0px 3px 8px;
+    text-align: center;
+}
+
+.recommendation-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+.recommendation-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 1024px) {
+    .weather-app {
+        padding: 15px;
+    }
+
+    .temperature-info .temp {
+        font-size: 4rem;
+    }
+
+    .additional-info {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .city-date-section .city {
+        font-size: 1.5rem;
+    }
+
+    .temperature-info .temp {
+        font-size: 3.5rem;
+    }
+
+    .additional-info {
+        gap: 20px;
+    }
+
+    .wind-info, .humidity-info, .visibility-info {
+        max-width: 120px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .city-date-section .city {
+        font-size: 1.2rem;
+    }
+
+    .temperature-info .temp {
+        font-size: 3rem;
+    }
+
+    .additional-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .wind-info, .humidity-info, .visibility-info {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    .recommendation-section {
+        padding: 10px;
+    }
+}
